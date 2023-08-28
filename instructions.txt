@@ -1,7 +1,7 @@
 I got a new project to do in freelancer.com here is the description:
 We want to add a feature to show market prices of various scrap materials in market. this would require to build a tool to scrap public data available on various public domain and get an estimate.
 
-also client provided me 2 websites , indiamart.com and www.recycleinme.com . now I will send you his important messages one by one:
+also client provided me 2 websites , indiamart.com and www.plastic4trade.com . now I will send you his important messages one by one:
 msg1: for our current purpose name of product and price should be enough, but we would like to get all public information also like website url from where info was scrapped
 
 msg2:i am new to this, we need a setup where this is done ideally on daily basis so we can get updates
