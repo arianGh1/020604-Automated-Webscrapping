@@ -70,18 +70,31 @@ names = []
 error = ""
 history = 1
 x = 0
+IsDriverClose = True
 for count,category in enumerate(categories):
-    driver = webdriver.Chrome(options=options )
+    if IsDriverClose:
+        driver = webdriver.Chrome(options=options )
+        IsDriverClose = False
+
     for city in cities:
+
         if history%24==0 :
 
-            driver.close()
+            if not IsDriverClose:
+                driver.close()
+                IsDriverClose = True
+                
+            else:
+                x+=1
+            history+=1
 
-            time.sleep(3)
-            driver = webdriver.Chrome(options=options)
-            history += 1
         else:
             history += 1
+
+        if IsDriverClose:
+            time.sleep(3)
+            driver = webdriver.Chrome(options=options)
+
         try:
             wb_address = category + "?grid_view=1"
             wb_address = wb_address.replace("impcat",city)
@@ -166,11 +179,12 @@ for count,category in enumerate(categories):
             error = "error in big try"
             x+=1
             continue
-    try:
+    if not IsDriverClose:
         driver.close()
-    except:
-        error = "error in final driver close "
+        IsDriverClose = True
+    else:
         x+=1
+
         
     time.sleep(2)
 
@@ -212,3 +226,18 @@ names_to_filter = ["kg", "tonne", "metric"]
 filtered_df = df[df['metric'].isin(names_to_filter)]
 filtered_df = filtered_df.reset_index(drop=True)
 filtered_df.to_csv("filtered_indiamart.csv",index=False)
+
+filtered_df["price"] = filtered_df["price"].apply(lambda x: float(x.split("/")[0].replace("₹","").replace(",","").split(" ")[0])/1000 if x.split("/")[1]==" tonne" else float(x.split("/")[0].replace("₹","").replace(",","").split(" ")[0]))
+del filtered_df["metric"]
+filtered_df['z_score'] = stats.zscore(filtered_df['price'])
+
+# Remove outliers: keep only the ones that are within +3 to -3 standard deviations in the column 'price'
+filtered_df = filtered_df[filtered_df['z_score'].abs() <= 3]
+
+# Drop the Z-score column as we no longer need it
+filtered_df.drop(columns=['z_score'], inplace=True)
+
+filtered_df.to_csv("filtered_indiamart.csv",index=False)
+# Calculate the average price per category
+summary_stats = filtered_df.groupby(["category","city"])['price'].agg(['mean', 'min', 'max', 'median'])
+summary_stats.to_csv("summary.csv",index=False)
