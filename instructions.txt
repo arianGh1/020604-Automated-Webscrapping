@@ -1,4 +1,4 @@
-I got a new project to do in freelancer.com here is the description:
+
 We want to add a feature to show market prices of various scrap materials in market. this would require to build a tool to scrap public data available on various public domain and get an estimate.
 
 also client provided me 2 websites , indiamart.com and www.plastic4trade.com . now I will send you his important messages one by one:
@@ -11,3 +11,12 @@ msg3:we need a more structured setup where prices are scraped, average price for
 msg4:we would like to have a small ui/ux dashboard where we can see datewise price of the waste, name of the waste type and a download button which when clicked will download excel sheet that shows data scrapped on that date. ont he backend your algo will scrap relevant data, remove the outliers and calculate the average price of each type of waste. and this scraping will be done on daily basis
 
 msg5:also i would like to point out that we will need average price per kg . so your code will need to sophesticated enough to see if price is mentioned per kf or per ton
+
+--------------------------------------------------
+CREDENTIALS:
+
+special email for project: waste5667@gmail.com
+special email password for project: Waste0000#
+
+lightnode server username: administrator
+lightnode server password: v.gc7Bm2#I
