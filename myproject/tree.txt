@@ -1,0 +1,55 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 1AF6-5FA0
+G:.
+³   db.sqlite3
+³   indiamart.csv
+³   manage.py
+³   tree.txt
+³   
+ÃÄÄÄcsvapp
+³   ³   admin.py
+³   ³   apps.py
+³   ³   forms.py
+³   ³   indiamart.py
+³   ³   models.py
+³   ³   plastic4trade.py
+³   ³   tests.py
+³   ³   views.py
+³   ³   __init__.py
+³   ³   
+³   ÃÄÄÄmigrations
+³   ³   ³   0001_initial.py
+³   ³   ³   __init__.py
+³   ³   ³   
+³   ³   ÀÄÄÄ__pycache__
+³   ³           0001_initial.cpython-310.pyc
+³   ³           __init__.cpython-310.pyc
+³   ³           
+³   ÀÄÄÄ__pycache__
+³           admin.cpython-310.pyc
+³           apps.cpython-310.pyc
+³           forms.cpython-310.pyc
+³           indiamart.cpython-310.pyc
+³           models.cpython-310.pyc
+³           plastic4trade.cpython-310.pyc
+³           views.cpython-310.pyc
+³           __init__.cpython-310.pyc
+³           
+ÃÄÄÄmyproject
+³   ³   asgi.py
+³   ³   settings.py
+³   ³   urls.py
+³   ³   wsgi.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           settings.cpython-310.pyc
+³           urls.cpython-310.pyc
+³           wsgi.cpython-310.pyc
+³           __init__.cpython-310.pyc
+³           
+ÀÄÄÄtemplates
+    ÀÄÄÄcsvapp
+            form.html
+            history.html
+            
