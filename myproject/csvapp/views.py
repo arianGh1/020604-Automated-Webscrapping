@@ -11,6 +11,7 @@ from .plastic4trade import plastic4trade
 from django.http import HttpResponse
 
 def download_csv(request, filename):
+    filename = filename.replace("\\", "/")
     if 'indiamart' in filename:
         file_path = os.path.join('csvapp/indiamart', filename)
     elif 'plastic4trade' in filename:
@@ -43,7 +44,7 @@ def generate_csvs(request):
             CSVHistory.objects.create(
                 start_date=start_date,
                 end_date=end_date,
-                generated_files=",".join(generated_files)
+                generated_files=",".join(generated_files) # This should store 'indiamart.zip,plastic4trade.zip'
             )
 
             return redirect('history')
