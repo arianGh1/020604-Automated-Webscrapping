@@ -1,6 +1,6 @@
 {% for history in histories %}
-    {{ history.start_date }} - {{ history.end_date }} : 
-    {% for filename in history.generated_files.split(",") %}
-        <a href="{% url 'download_csv' filename %}">{{ filename }}</a>
-    {% endfor %}
+   {{ history.start_date }} - {{ history.end_date }} : 
+   {% for filename in history.files %}
+       <a href="{% url 'download_csv' filename %}">{{ filename }}</a>
+   {% endfor %}
 {% endfor %}
