@@ -6,7 +6,7 @@ def generate():
     # Dummy data for demonstration purposes
     data = [
         ["Name", "Product", "Price"],
-        ["Vendor A", "Widget A", "$10"],
+        ["Vendor A", "Widget A", "$1011"],
         ["Vendor B", "Widget B", "$12"]
     ]
 
@@ -34,4 +34,4 @@ def generate():
                 
     zipf.close()
 
-    return os.path.join(dir_name, 'indiamart.zip')  # Return path of the generated zip
+    return 'indiamart.zip'
