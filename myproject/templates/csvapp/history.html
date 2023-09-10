@@ -1,6 +1,143 @@
-{% for history in histories %}
-    {{ history.start_date }} - {{ history.end_date }} : 
-    {% for filename in history.file_list %}
-        <a href="{% url 'download_csv' filename=filename %}">{{ filename }}</a> 
-    {% endfor %}
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <style>
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #343a40;
+            color: #ffffff;
+            letter-spacing: 0.1em;
+        }
+
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .pagination .step-links a, .pagination .step-links span {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            color: #007BFF;
+        }
+
+        .pagination .step-links a {
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .pagination .step-links a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .pagination .step-links .current {
+            color: #343a40;
+            background-color: #f5f5f5;
+            border: 1px solid transparent;
+        }
+
+    </style>
+</head>
+<body>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Indiamart</th>
+            <th>Plastic4Trade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for history in page_obj %}
+        <tr>
+            <td>{{ history.start_date }} - {{ history.end_date }}</td>
+            <td>
+                {% with indiamart_file=None %}
+                    {% for file, display_file in history.files %}
+                        {% if "indiamart" in file %}
+                            {% with indiamart_file=file %}
+                                <a href="{% url 'download_csv' filename=indiamart_file %}">Download</a>
+                            {% endwith %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if indiamart_file == None %}
+                        &mdash;  <!-- This is an HTML entity for a dash, to signify no data -->
+                    {% endif %}
+                {% endwith %}
+            </td>
+            <td>
+                {% with plastic4trade_file=None %}
+                    {% for file, display_file in history.files %}
+                        {% if "plastic4trade" in file %}
+                            {% with plastic4trade_file=file %}
+                                <a href="{% url 'download_csv' filename=plastic4trade_file %}">Download</a>
+                            {% endwith %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if plastic4trade_file == None %}
+                        &mdash;
+                    {% endif %}
+                {% endwith %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Pagination controls -->
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</body>
+</html>

@@ -2,7 +2,6 @@ Folder PATH listing for volume New Volume
 Volume serial number is 1AF6-5FA0
 G:.
 ³   db.sqlite3
-³   indiamart.csv
 ³   manage.py
 ³   tree.txt
 ³   
@@ -10,13 +9,29 @@ G:.
 ³   ³   admin.py
 ³   ³   apps.py
 ³   ³   forms.py
-³   ³   indiamart.py
 ³   ³   models.py
-³   ³   plastic4trade.py
 ³   ³   tests.py
 ³   ³   views.py
 ³   ³   __init__.py
 ³   ³   
+³   ÃÄÄÄindiamart
+³   ³   ³   indiamart.py
+³   ³   ³   
+³   ³   ÃÄÄÄindiamart_1694329004
+³   ³   ³       indiamart.csv
+³   ³   ³       indiamart_1694329004.zip
+³   ³   ³       
+³   ³   ÃÄÄÄindiamart_1694329020
+³   ³   ³       indiamart.csv
+³   ³   ³       indiamart_1694329020.zip
+³   ³   ³       
+³   ³   ÃÄÄÄindiamart_1694329048
+³   ³   ³       indiamart.csv
+³   ³   ³       indiamart_1694329048.zip
+³   ³   ³       
+³   ³   ÀÄÄÄ__pycache__
+³   ³           indiamart.cpython-310.pyc
+³   ³           
 ³   ÃÄÄÄmigrations
 ³   ³   ³   0001_initial.py
 ³   ³   ³   __init__.py
@@ -25,13 +40,17 @@ G:.
 ³   ³           0001_initial.cpython-310.pyc
 ³   ³           __init__.cpython-310.pyc
 ³   ³           
+³   ÃÄÄÄplastic4trade
+³   ³   ³   plastic4trade.py
+³   ³   ³   
+³   ³   ÀÄÄÄ__pycache__
+³   ³           plastic4trade.cpython-310.pyc
+³   ³           
 ³   ÀÄÄÄ__pycache__
 ³           admin.cpython-310.pyc
 ³           apps.cpython-310.pyc
 ³           forms.cpython-310.pyc
-³           indiamart.cpython-310.pyc
 ³           models.cpython-310.pyc
-³           plastic4trade.cpython-310.pyc
 ³           views.cpython-310.pyc
 ³           __init__.cpython-310.pyc
 ³           

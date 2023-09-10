@@ -2,26 +2,28 @@ import csv
 from datetime import datetime
 import zipfile
 import os
+import time
+import pandas as pd
 def generate():
+
     # Dummy data for demonstration purposes
     data = [
         ["Name", "Product", "Price"],
-        ["Vendor A", "Widget A", "$1011"],
+        ["Vendor A", "Widget A", "$134211"],
         ["Vendor B", "Widget B", "$12"]
     ]
+    current_time = int(time.time())  # Current Unix timestamp
 
-    dir_name = 'csvapp/indiamart'
+
+    dir_name = 'csvapp/indiamart/indiamart_' + str(current_time)
     
     # Ensure the directory exists
     if not os.path.exists(dir_name):
         os.makedirs(dir_name)
     
-    csv_path = os.path.join(dir_name, 'indiamart.csv')
-
-    # Generate a CSV file named 'indiamart.csv'
-    with open(csv_path, 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(data)
+    
+   
+    pd.DataFrame(data).to_csv(dir_name+'/indiamart.csv',index=False)
     
     print(f"[{datetime.now()}] indiamart.csv has been generated!")
 
@@ -34,4 +36,4 @@ def generate():
                 
     zipf.close()
 
-    return 'indiamart.zip'
+    return os.path.join(dir_name, 'indiamart.zip')

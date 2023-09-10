@@ -4,27 +4,26 @@ from .models import CSVHistory
 from .forms import CSVOptionsForm
 import datetime
 import os
+from django.core.paginator import Paginator
 
 # Assuming your scripts are in the same directory
 from .indiamart import indiamart
 from .plastic4trade import plastic4trade
 from django.http import HttpResponse
-
+from django.conf import settings
 def download_csv(request, filename):
-    filename = filename.replace("\\", "/")
-    if 'indiamart' in filename:
-        file_path = os.path.join('csvapp/indiamart', filename)
-    elif 'plastic4trade' in filename:
-        file_path = os.path.join('csvapp/plastic4trade', filename)
-    else:
-        return HttpResponse("Invalid file name.", status=400)
-
+    relative_path = filename.replace("csvapp/", "", 1)
+    file_path = os.path.join(settings.MEDIA_ROOT, relative_path)
+    print("Full File Path:", file_path)
+    
+    print("Requested File:", filename)
     if os.path.exists(file_path):
         with open(file_path, 'rb') as file:
             response = HttpResponse(file.read(), content_type='application/zip')
-            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+            response['Content-Disposition'] = f'attachment; filename="{file_path.split("/")[-1]}"'
             return response
     return HttpResponse("File not found.", status=404)
+
 def generate_csvs(request):
     if request.method == "POST":
         form = CSVOptionsForm(request.POST)
@@ -54,10 +53,21 @@ def generate_csvs(request):
     return render(request, 'csvapp/form.html', {'form': form})
 
 def history(request):
+    #CSVHistory.objects.all().delete()
+
     histories = CSVHistory.objects.all().order_by('-start_date')
     
-    # Split the generated_files for each history entry
+    # Split the generated_files for each history entry and create display names
     for history in histories:
-        history.file_list = history.generated_files.split(',')
+        full_file_list = history.generated_files.replace("\\","/").split(',')
+        display_file_list = [os.path.basename(filename) for filename in full_file_list]
+        
+        # Zip the lists into tuples of (full filename, display filename)
+        history.files = list(zip(full_file_list, display_file_list))
 
-    return render(request, 'csvapp/history.html', {'histories': histories})
+    # Implementing pagination
+    paginator = Paginator(histories, 20)  # Show 20 histories per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'csvapp/history.html', {'page_obj': page_obj})

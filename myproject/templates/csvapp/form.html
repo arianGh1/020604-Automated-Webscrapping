@@ -1,5 +1,30 @@
 <form method="post">
     {% csrf_token %}
     {{ form }}
-    <button type="submit">Generate CSVs</button>
+    <button type="submit" id="generate-btn" disabled>Generate CSVs</button>
 </form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let submitBtn = document.querySelector('#generate-btn');
+
+        function updateButtonState() {
+            for (let checkbox of checkboxes) {
+                if (checkbox.checked) {
+                    submitBtn.removeAttribute('disabled');
+                    return;
+                }
+            }
+            submitBtn.setAttribute('disabled', 'disabled');
+        }
+
+        // Initially set the state
+        updateButtonState();
+
+        // Add event listeners
+        for (let checkbox of checkboxes) {
+            checkbox.addEventListener('change', updateButtonState);
+        }
+    });
+</script>
