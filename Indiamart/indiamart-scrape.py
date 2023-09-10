@@ -8,6 +8,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import pickle
+from scipy import stats
 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
