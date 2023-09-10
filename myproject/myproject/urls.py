@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.generate_csvs, name='generate_csvs'),
     path('history/', views.history, name='history'),
-    path('download/<path:filename>', views.download_csv, name='download_csv')
+    path('download/<path:filename>', views.download_csv, name='download_csv'),
+    path('login/', views.user_login, name='user_login'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

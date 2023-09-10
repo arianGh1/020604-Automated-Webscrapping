@@ -9,3 +9,6 @@ class CSVOptionsForm(forms.Form):
         cleaned_data = super().clean()
         if not (cleaned_data.get("indiamart") or cleaned_data.get("plastic4trade")):
             raise ValidationError("Please select at least one option before generating CSV.")
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)

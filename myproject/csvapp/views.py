@@ -5,12 +5,37 @@ from .forms import CSVOptionsForm
 import datetime
 import os
 from django.core.paginator import Paginator
+from django.contrib.auth import authenticate, login
+from django.shortcuts import redirect
+from .forms import LoginForm
 
-# Assuming your scripts are in the same directory
 from .indiamart import indiamart
 from .plastic4trade import plastic4trade
 from django.http import HttpResponse
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            user = authenticate(request,
+                                username=cd['username'],
+                                password=cd['password'])
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('generate_csvs')
+                else:
+                    return HttpResponse('Disabled account')
+            else:
+                return HttpResponse('Invalid login')
+    else:
+        form = LoginForm()
+    return render(request, 'csvapp/login.html', {'form': form})
+
+
 def download_csv(request, filename):
     relative_path = filename.replace("csvapp/", "", 1)
     file_path = os.path.join(settings.MEDIA_ROOT, relative_path)
@@ -23,7 +48,7 @@ def download_csv(request, filename):
             response['Content-Disposition'] = f'attachment; filename="{file_path.split("/")[-1]}"'
             return response
     return HttpResponse("File not found.", status=404)
-
+@login_required
 def generate_csvs(request):
     if request.method == "POST":
         form = CSVOptionsForm(request.POST)
@@ -51,7 +76,7 @@ def generate_csvs(request):
         form = CSVOptionsForm()
 
     return render(request, 'csvapp/form.html', {'form': form})
-
+@login_required
 def history(request):
     #CSVHistory.objects.all().delete()
 

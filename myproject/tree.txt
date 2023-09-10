@@ -2,6 +2,7 @@ Folder PATH listing for volume New Volume
 Volume serial number is 1AF6-5FA0
 G:.
 ³   db.sqlite3
+³   filtered_indiamart.csv
 ³   manage.py
 ³   tree.txt
 ³   
@@ -15,19 +16,36 @@ G:.
 ³   ³   __init__.py
 ³   ³   
 ³   ÃÄÄÄindiamart
+³   ³   ³   chromedriver.exe
+³   ³   ³   cities.txt
 ³   ³   ³   indiamart.py
+³   ³   ³   urls.txt
 ³   ³   ³   
-³   ³   ÃÄÄÄindiamart_1694329004
+³   ³   ÃÄÄÄindiamart_1694349609
+³   ³   ÃÄÄÄindiamart_1694349662
+³   ³   ³       filtered_indiamart.csv
 ³   ³   ³       indiamart.csv
-³   ³   ³       indiamart_1694329004.zip
+³   ³   ³       indiamart.zip
+³   ³   ³       summary.csv
 ³   ³   ³       
-³   ³   ÃÄÄÄindiamart_1694329020
+³   ³   ÃÄÄÄindiamart_1694349834
+³   ³   ³       filtered_indiamart.csv
 ³   ³   ³       indiamart.csv
-³   ³   ³       indiamart_1694329020.zip
+³   ³   ³       indiamart.zip
+³   ³   ³       summary.csv
 ³   ³   ³       
-³   ³   ÃÄÄÄindiamart_1694329048
+³   ³   ÃÄÄÄindiamart_1694350121
+³   ³   ³       filtered_indiamart.csv
 ³   ³   ³       indiamart.csv
-³   ³   ³       indiamart_1694329048.zip
+³   ³   ³       indiamart.zip
+³   ³   ³       summary.csv
+³   ³   ³       
+³   ³   ÃÄÄÄindiamart_1694356807
+³   ³   ÃÄÄÄindiamart_1694356840
+³   ³   ³       filtered_indiamart.csv
+³   ³   ³       indiamart.csv
+³   ³   ³       indiamart.zip
+³   ³   ³       summary.csv
 ³   ³   ³       
 ³   ³   ÀÄÄÄ__pycache__
 ³   ³           indiamart.cpython-310.pyc
@@ -43,6 +61,14 @@ G:.
 ³   ÃÄÄÄplastic4trade
 ³   ³   ³   plastic4trade.py
 ³   ³   ³   
+³   ³   ÃÄÄÄplastic4trade_1694347879
+³   ³   ³       plastic4trade.csv
+³   ³   ³       plastic4trade.zip
+³   ³   ³       
+³   ³   ÃÄÄÄplastic4trade_1694349327
+³   ³   ³       plastic4trade.csv
+³   ³   ³       plastic4trade.zip
+³   ³   ³       
 ³   ³   ÀÄÄÄ__pycache__
 ³   ³           plastic4trade.cpython-310.pyc
 ³   ³           
@@ -71,4 +97,5 @@ G:.
     ÀÄÄÄcsvapp
             form.html
             history.html
+            login.html
             
