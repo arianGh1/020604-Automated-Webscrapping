@@ -1,8 +1,26 @@
 <form method="post">
     {% csrf_token %}
     {{ form }}
-    <button type="submit" id="generate-btn" disabled>Generate CSVs</button>
+    <button type="submit" id="generate-btn" disabled>Run Scrape</button>
+    <a href="{% url 'history' %}" class="btn" id="history-btn">View History</a>
 </form>
+
+<style>
+    /* Basic styling for the button (you can enhance it further) */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
