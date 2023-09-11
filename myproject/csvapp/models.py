@@ -7,3 +7,4 @@ class CSVHistory(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     generated_files = models.TextField()
+    is_running = models.BooleanField(default=False)

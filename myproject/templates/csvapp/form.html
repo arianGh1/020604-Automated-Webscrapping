@@ -1,9 +1,18 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
 <form method="post">
     {% csrf_token %}
     {{ form }}
     <button type="submit" id="generate-btn" disabled>Run Scrape</button>
     <a href="{% url 'history' %}" class="btn" id="history-btn">View History</a>
-    
+    <!-- Status message for scraping -->
+    <p id="statusMessage"></p>
 </form>
 
 <style>
@@ -27,6 +36,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         let checkboxes = document.querySelectorAll('input[type="checkbox"]');
         let submitBtn = document.querySelector('#generate-btn');
+        let statusMessage = document.querySelector('#statusMessage');
 
         function updateButtonState() {
             for (let checkbox of checkboxes) {
@@ -38,10 +48,37 @@
             submitBtn.setAttribute('disabled', 'disabled');
         }
 
-        // Initially set the state
+        // Function to start polling
+        function startPolling() {
+            statusMessage.innerText = "Scrape is running now(it takes about 4-5 days as an estimation)";
+            let statusInterval = setInterval(function() {
+                fetch('{% url "get_scrape_status" %}').then(response => {
+                    return response.json();
+                }).then(data => {
+                    if (data.status === 'FINISHED') {
+                        statusMessage.innerText = "";
+                        clearInterval(statusInterval); // Stop polling
+                    }
+                });
+            }, 5000); // 5000 ms = 5 seconds
+        }
+
+        // Check scraping status on page load
+        fetch('{% url "get_scrape_status" %}').then(response => {
+            return response.json();
+        }).then(data => {
+            if (data.status === 'RUNNING') {
+                startPolling();
+            }
+        });
+
+        // Event listener for the submit button
+        submitBtn.addEventListener('click', startPolling);
+
+        // Initially set the state of the button
         updateButtonState();
 
-        // Add event listeners
+        // Add event listeners to checkboxes
         for (let checkbox of checkboxes) {
             checkbox.addEventListener('change', updateButtonState);
         }

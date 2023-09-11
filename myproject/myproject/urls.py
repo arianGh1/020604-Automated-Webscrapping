@@ -19,7 +19,7 @@ from django.urls import path
 from csvapp import views
 from django.conf import settings
 from django.conf.urls.static import static
-from csvapp.views import stream_response
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,7 @@ urlpatterns = [
     path('history/', views.history, name='history'),
     path('download/<path:filename>', views.download_csv, name='download_csv'),
     path('login/', views.user_login, name='user_login'),
-    path('progress/', stream_response, name='progress_stream')
+    path('path/to/get_scrape_status/', views.get_scrape_status, name='get_scrape_status')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

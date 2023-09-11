@@ -8,20 +8,20 @@ from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from .forms import LoginForm
-
+from django.http import JsonResponse
 from .indiamart import indiamart
 from .plastic4trade import plastic4trade
 from django.http import HttpResponse
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.http import StreamingHttpResponse
+from django.contrib import messages
+from django.http import JsonResponse
 
-def stream_response(request):
-    def event_stream():
-        for progress_message in indiamart.scrape():
-            yield f"data: {progress_message}\n\n"
+def get_scrape_status(request):
+    is_running = CSVHistory.objects.filter(is_running=True).exists()
 
-    return StreamingHttpResponse(event_stream(), content_type="text/event-stream")
+    status = "RUNNING" if is_running else "FINISHED"
+    return JsonResponse({"status": status})
 
 def user_login(request):
     if request.method == 'POST':
@@ -57,27 +57,44 @@ def download_csv(request, filename):
             return response
     return HttpResponse("File not found.", status=404)
 @login_required
+@login_required
 def generate_csvs(request):
     if request.method == "POST":
         form = CSVOptionsForm(request.POST)
+
+        # Check if a scraping process is already running
+        is_already_running = CSVHistory.objects.filter(is_running=True).exists()
+        if is_already_running:
+            messages.error(request, 'Another scraping process is already running. Please wait.')
+            return redirect('history')
         
         if form.is_valid():
             generated_files = []
 
-            if form.cleaned_data.get('indiamart'):
-                generated_files.append(indiamart.generate())
-
-            if form.cleaned_data.get('plastic4trade'):
-                generated_files.append(plastic4trade.generate())
-
+            # Create the CSVHistory entry with is_running=True since the scraping process is about to start
             end_date = datetime.date.today()
             start_date = end_date - datetime.timedelta(days=7)
-
-            CSVHistory.objects.create(
+            history = CSVHistory.objects.create(
                 start_date=start_date,
                 end_date=end_date,
-                generated_files=",".join(generated_files) # This should store 'indiamart.zip,plastic4trade.zip'
+                generated_files="",  # Initialize with empty. We'll fill this in later.
+                is_running=True  # Set this to True since scraping starts now
             )
+
+            try:
+                if form.cleaned_data.get('indiamart'):
+                    generated_files.append(indiamart.generate())
+                    messages.success(request, 'Scraping Indiamart has finished.')
+
+                if form.cleaned_data.get('plastic4trade'):
+                    generated_files.append(plastic4trade.generate())
+            except Exception as e:
+                messages.error(request, f"Error during scraping: {e}")
+            finally:
+                # Now update the CSVHistory entry's generated_files field and set is_running=False
+                history.generated_files = ",".join(generated_files)
+                history.is_running = False
+                history.save()
 
             return redirect('history')
     else:

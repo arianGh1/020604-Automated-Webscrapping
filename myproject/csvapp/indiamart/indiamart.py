@@ -82,7 +82,7 @@ def scrape(dir_name):
             driver = webdriver.Chrome(executable_path='csvapp/indiamart/chromedriver.exe',options=options )
             IsDriverClose = False
 
-        for city in cities[:10]:
+        for city in cities[:5]:
 
             if history%24==0 :
 
