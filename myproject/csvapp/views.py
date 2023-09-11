@@ -14,6 +14,14 @@ from .plastic4trade import plastic4trade
 from django.http import HttpResponse
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.http import StreamingHttpResponse
+
+def stream_response(request):
+    def event_stream():
+        for progress_message in indiamart.scrape():
+            yield f"data: {progress_message}\n\n"
+
+    return StreamingHttpResponse(event_stream(), content_type="text/event-stream")
 
 def user_login(request):
     if request.method == 'POST':
