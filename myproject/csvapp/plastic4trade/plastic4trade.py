@@ -53,7 +53,7 @@ def scrape(dir_name):
     index = 0
     count = 0
     driver = webdriver.Chrome(executable_path='csvapp/plastic4trade/chromedriver.exe',options=options , desired_capabilities=capabilities)
-    for category_url in category_urls:
+    for category_url in category_urls[:1]:
         print(f'category: {category_url.split("/")[-2]} --{count}/{len(category_urls)}',end='\r')
         driver.get(category_url)
         time.sleep(3)

@@ -18,6 +18,8 @@ CREDENTIALS:
 special email for project: waste5667@gmail.com
 special email password for project: Waste0000#
 
+lightnode account: sahilsanwal@mywastesolution.com
+lighnode password: rd:m6FQT!307
 lightnode server username: administrator
 lightnode server password: v.gc7Bm2#I
 
