@@ -77,12 +77,12 @@ def scrape(dir_name):
     history = 1
     x = 0
     IsDriverClose = True
-    for count,category in enumerate(categories[:2]):
+    for count,category in enumerate(categories):
         if IsDriverClose:
             driver = webdriver.Chrome(executable_path='csvapp/indiamart/chromedriver.exe',options=options )
             IsDriverClose = False
 
-        for city in cities[:5]:
+        for city in cities:
 
             if history%24==0 :
 
