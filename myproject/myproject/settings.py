@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-itt75rk*8r2_j69s-bs%s&np4ao2k=ao80$xv9c=4u8fe)951e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["wastescrape.mywastesolution.com"]
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 # Application definition
