@@ -1,9 +1,0 @@
-category,city,mean,min,max,median
-ferrous-metal-scrap,agra,51.142857142857146,17.0,140.0,40.0
-ferrous-metal-scrap,ahmedabad,133.328,19.2,1200.0,51.0
-ferrous-metal-scrap,allahabad,92.00714285714285,0.05,450.0,40.0
-ferrous-metal-scrap,amritsar,62.5,41.5,100.0,46.0
-ferrous-metal-scrap,amroha,40.8094,0.047,145.0,19.0
-pet-bottle-flake,ahmedabad,55.45,17.0,85.0,56.5
-pet-bottle-flake,allahabad,46.0,46.0,46.0,46.0
-pet-bottle-flake,amritsar,80.0,80.0,80.0,80.0

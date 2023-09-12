@@ -243,9 +243,13 @@ def scrape(dir_name):
     # Drop the Z-score column as we no longer need it
     filtered_df.drop(columns=['z_score'], inplace=True)
 
-    filtered_df.to_csv("filtered_indiamart.csv",index=False)
+    q_low = filtered_df["price"].quantile(0.10)
+    q_hi  = filtered_df["price"].quantile(0.90)
+
+    df_filtered = filtered_df[(filtered_df["price"] < q_hi) & (filtered_df["price"] > q_low)]
+    
     # Calculate the average price per category
-    summary_stats = filtered_df.groupby(["category","city"])['price'].agg(['mean', 'min', 'max', 'median'])
+    summary_stats = df_filtered.groupby(["category","city"])['price'].agg(['mean', 'min', 'max', 'median'])
     summary_stats.to_csv(dir_name+"/summary.csv")
 
 def generate():

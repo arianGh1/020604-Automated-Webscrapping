@@ -45,3 +45,90 @@ capabilities['acceptInsecureCerts'] = True
 with open("CategoryUrls","rb") as f:
     category_urls = pickle.load(f)
 df = pd.DataFrame().from_dict(all_details).T
+all_details = {}
+index = 0
+count = 0
+driver = webdriver.Chrome(executable_path='csvapp/plastic4trade/chromedriver.exe',options=options , desired_capabilities=capabilities)
+for category_url in category_urls:
+    print(f'category: {category_url.split("/")[-2]} --{count}/{len(category_urls)}',end='\r')
+    driver.get(category_url)
+    time.sleep(3)
+    try:
+        sale_btn = driver.find_element(By.XPATH,"//*[@id='salepostcategory']/div/a/button")
+        sale_btn.click()
+    except:
+        pass
+    
+    time.sleep(3)
+    html_text = driver.page_source
+    soup = BeautifulSoup(html_text,"lxml")
+    products_part = soup.find("div",class_="news-detail-right-main")
+    products = products_part.find_all("div",class_="col-lg-3 col-md-3 col-sm-12 col-xs-12")
+    for product in products:
+        details = {}
+
+        details["name"] = product.find("h6").text
+        details["link"] = product.find("a")["href"]
+        details["price"] = product.find_all("div")[-1].text.strip()
+        details["category"] = category_url.split("/")[-2]
+        details["type"] = "sale"
+
+        all_details[index] = details
+        index += 1
+
+
+    driver.get(category_url)
+    time.sleep(3)
+    try:
+        buy_btn = driver.find_element(By.XPATH,"//*[@id='buypostcategory']/div/a/button")
+        buy_btn.click()
+    except:
+        count+=1
+        continue                             
+    time.sleep(3)
+    html_text = driver.page_source
+    soup = BeautifulSoup(html_text,"lxml")
+    products_part = soup.find("div",class_="news-detail-right-main")
+    products = products_part.find_all("div",class_="col-lg-3 col-md-3 col-sm-12 col-xs-12")
+   
+    for product in products:
+        details = {}
+        
+        details["name"] = product.find("h6").text
+        details["link"] = product.find("a")["href"]
+        details["price"] = product.find_all("div")[-1].text.strip()
+        details["category"] = category_url.split("/")[-2]
+        details["type"] = "buy"
+        
+        all_details[index] = details
+        index += 1
+    count+=1
+    if count%5 == 0:
+        driver.close()
+        time.sleep(1)
+        driver = webdriver.Chrome(executable_path='csvapp/plastic4trade/chromedriver.exe',options=options , desired_capabilities=capabilities)
+
+df = pd.DataFrame().from_dict(all_details).T
+del df["type"]
+df.to_csv("plastic4trade.csv",index=False)
+df = pd.read_csv("plastic4trade.csv")
+
+df["price"] = df["price"].apply(lambda x: "@"+str(int(x.replace("$",""))*83) if "$" in x else x)
+df["price"] = df["price"].apply(lambda x: "@"+str(int(x.replace("£",""))*104) if "£" in x else x)
+df["price"] = df["price"].apply(lambda x: "@"+str(int(x.replace("€",""))*89) if "€" in x else x)
+df["price"] = df["price"].apply(lambda x: "@"+str(x.replace("₹","")) if "₹" in x else x)
+def process_price(value):
+    if "@" not in value:
+        return None
+    try:
+        return int(value.replace("@", ""))
+    except ValueError:
+        return None
+
+df["price"] = df["price"].apply(process_price)
+q_low = df["price"].quantile(0.10)
+q_hi  = df["price"].quantile(0.90)
+
+df_filtered = df[(df["price"] < q_hi) & (df["price"] > q_low)]
+summary_stats = df_filtered.groupby(["category"])['price'].agg(['mean', 'min', 'max', 'median'])
+summary_stats.to_csv("summary.csv")

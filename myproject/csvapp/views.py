@@ -88,6 +88,7 @@ def generate_csvs(request):
 
                 if form.cleaned_data.get('plastic4trade'):
                     generated_files.append(plastic4trade.generate())
+                    messages.success(request, 'Scraping Plastic4trade has finished.')
             except Exception as e:
                 messages.error(request, f"Error during scraping: {e}")
             finally:
@@ -103,7 +104,7 @@ def generate_csvs(request):
     return render(request, 'csvapp/form.html', {'form': form})
 @login_required
 def history(request):
-    #CSVHistory.objects.all().delete()
+    CSVHistory.objects.all().delete()
 
     histories = CSVHistory.objects.all().order_by('-start_date')
     
