@@ -23,9 +23,6 @@ lighnode password: rd:m6FQT!307
 lightnode server username: administrator
 lightnode server password: v.gc7Bm2#I
 
-django admin username in localhost:8000/admin : admin
-django password : Waste0000#
-django email : arian.ghassemi@gmail.com
 
-django username: staff
-django password: Waste0000#
+wastescrape.mywastesolution.com username: staff
+wastescrape.mywastesolution.com password: Waste0000#
