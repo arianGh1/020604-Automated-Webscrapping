@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import FileResponse
 from .models import CSVHistory
 from .forms import CSVOptionsForm
-import datetime
+from datetime import datetime, timedelta
 import os
 from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login
@@ -59,6 +59,7 @@ def download_csv(request, filename):
 @login_required
 @login_required
 def generate_csvs(request):
+
     if request.method == "POST":
         form = CSVOptionsForm(request.POST)
 
@@ -72,8 +73,8 @@ def generate_csvs(request):
             generated_files = []
 
             # Create the CSVHistory entry with is_running=True since the scraping process is about to start
-            end_date = datetime.date.today()
-            start_date = end_date - datetime.timedelta(days=7)
+            end_date = datetime.now()
+            start_date = end_date - timedelta(days=7)
             history = CSVHistory.objects.create(
                 start_date=start_date,
                 end_date=end_date,
@@ -108,6 +109,7 @@ def history(request):
 
     histories = CSVHistory.objects.all().order_by('-start_date')
     
+
     # Split the generated_files for each history entry and create display names
     for history in histories:
         full_file_list = history.generated_files.replace("\\","/").split(',')
