@@ -22,7 +22,10 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
+from selenium.webdriver.chrome.service import Service
+
 def scrape(dir_name):
+    service = Service(executable_path='csvapp/indiamart/chromedriver.exe')
     options = Options()
 
     options.add_argument('--user-data-dir=/Users/Administrator/AppData/Local/Google/Chrome/User Data/') 
@@ -79,7 +82,7 @@ def scrape(dir_name):
     IsDriverClose = True
     for count,category in enumerate(categories[:2]):
         if IsDriverClose:
-            driver = webdriver.Chrome(options=options )
+            driver = webdriver.Chrome(service=service,options=options )
             IsDriverClose = False
 
         for city in cities[:5]:
@@ -99,7 +102,7 @@ def scrape(dir_name):
 
             if IsDriverClose:
                 time.sleep(3)
-                driver = webdriver.Chrome(options=options )
+                driver = webdriver.Chrome(service=service,options=options )
 
             try:
                 wb_address = category + "?grid_view=1"

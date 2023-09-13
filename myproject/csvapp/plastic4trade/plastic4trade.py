@@ -21,7 +21,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
+
+from selenium.webdriver.chrome.service import Service
 def scrape(dir_name):
+    service = Service(executable_path='csvapp/plastic4trade/chromedriver.exe')
     options = Options()
 
     options.add_argument('--user-data-dir=/Users/Administrator/AppData/Local/Google/Chrome/User Data/') 
@@ -52,7 +55,7 @@ def scrape(dir_name):
     all_details = {}
     index = 0
     count = 0
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=service,options=options)
     for category_url in category_urls[:1]:
         print(f'category: {category_url.split("/")[-2]} --{count}/{len(category_urls)}',end='\r')
         driver.get(category_url)
@@ -110,7 +113,7 @@ def scrape(dir_name):
         if count%5 == 0:
             driver.close()
             time.sleep(1)
-            driver = webdriver.Chrome(options=options)
+            driver = webdriver.Chrome(executable_path='csvapp/plastic4trade/chromedriver.exe',options=options)
 
     df = pd.DataFrame().from_dict(all_details).T
     del df["type"]
