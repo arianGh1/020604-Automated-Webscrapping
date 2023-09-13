@@ -79,7 +79,7 @@ def scrape(dir_name):
     IsDriverClose = True
     for count,category in enumerate(categories[:2]):
         if IsDriverClose:
-            driver = webdriver.Chrome(executable_path='csvapp/indiamart/chromedriver.exe',options=options )
+            driver = webdriver.Chrome(options=options )
             IsDriverClose = False
 
         for city in cities[:5]:
@@ -99,7 +99,7 @@ def scrape(dir_name):
 
             if IsDriverClose:
                 time.sleep(3)
-                driver = webdriver.Chrome(executable_path='csvapp/indiamart/chromedriver.exe',options=options )
+                driver = webdriver.Chrome(options=options )
 
             try:
                 wb_address = category + "?grid_view=1"
