@@ -104,7 +104,7 @@ def generate_csvs(request):
     return render(request, 'csvapp/form.html', {'form': form})
 @login_required
 def history(request):
-    CSVHistory.objects.all().delete()
+    #CSVHistory.objects.all().delete()
 
     histories = CSVHistory.objects.all().order_by('-start_date')
     
