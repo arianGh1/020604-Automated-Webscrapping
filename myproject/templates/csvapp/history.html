@@ -89,7 +89,7 @@
     <tbody>
         {% for history in page_obj %}
         <tr>
-            <td>{{ history.start_date }} - {{ history.end_date }}</td>
+            <td>{{ history.start_date|date:"F j, Y, P" }} - {{ history.end_date|date:"F j, Y, P" }}</td>
             <td>
                 {% with indiamart_file=None %}
                     {% for file, display_file in history.files %}
