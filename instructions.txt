@@ -17,6 +17,8 @@ CREDENTIALS:
 
 special email for project: waste5667@gmail.com
 special email password for project: Waste0000#
+client id for gmail app:355172851814-r55p4liplb4l4s309frpd97puut1eg4t.apps.googleusercontent.com
+
 
 lightnode account: sahilsanwal@mywastesolution.com
 lighnode password: rd:m6FQT!307

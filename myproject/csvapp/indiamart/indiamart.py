@@ -15,6 +15,13 @@ import numpy as np
 import pandas as pd
 import pickle
 from scipy import stats
+import base64
+import os
+import json
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -23,6 +30,45 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver.chrome.service import Service
+# Setup the Gmail API
+SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+
+def get_service(dir_name):
+    creds = None
+    # The file token.json stores the user's access and refresh tokens, and is
+    # created automatically when the authorization flow completes for the first time.
+    if os.path.exists('token.json'):
+        with open('token.json', 'r') as token:
+            creds = Credentials.from_authorized_user_file('token.json')
+
+    # If there are no (valid) credentials available, prompt the user to log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file('csvapp/indiamart/'+'client_secret_355172851814-r55p4liplb4l4s309frpd97puut1eg4t.apps.googleusercontent.com.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+            # Save the credentials for the next run
+            with open('token.json', 'w') as token:
+                token.write(creds.to_json())
+
+    service = build('gmail', 'v1', credentials=creds)
+    return service
+
+def get_latest_email_subject(service):
+    results = service.users().messages().list(userId='me', maxResults=1).execute()
+    msg_id = results['messages'][0]['id']
+    message = service.users().messages().get(userId='me', id=msg_id).execute()
+
+    payload = message['payload']
+    headers = payload['headers']
+
+    for header in headers:
+        name = header['name']
+        if name == "Subject":
+            return header['value']
+
+    return None
 
 def scrape(dir_name):
     service = Service(executable_path='csvapp/indiamart/chromedriver.exe')
@@ -74,8 +120,6 @@ def scrape(dir_name):
 
     all_details = {}
     index = 0
-    urls = []
-    names = []
     error = ""
     history = 1
     x = 0
@@ -128,8 +172,10 @@ def scrape(dir_name):
 
                 soup_old = ""
                 print(f'Category Number:{count+1}/{len(categories)}----Dict_Length:{len(all_details)}',end='\r')
+                special_index = 0
                 while True:
-
+                    if special_index ==30:
+                        break
 
                     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                     html_text = driver.page_source
@@ -142,11 +188,40 @@ def scrape(dir_name):
 
                         btn = driver.find_element(By.CLASS_NAME,"fm2")
                         driver.execute_script("arguments[0].click();",btn)
+                        html_text = driver.page_source
+                        soup = BeautifulSoup(html_text,"lxml")
+                        if "Email ID" in html_text:
+                            email_input = driver.find_element(By.XPATH,"//*[@id='email']")
+                            email_input.send_keys("waste5667@gmail.com")
+                            time.sleep(1)
+                            terms_btn = driver.find_element(By.XPATH,"//*[@id='myCheckbox']")
+                            time.sleep(1)
+                            terms_btn.click()
+                            sign_in_btn = driver.find_element(By.XPATH,"//*[@id='submtbtn']")
+                            sign_in_btn.click()
+                            time.sleep(15)
+                            serve = get_service(dir_name)
+                            subject = get_latest_email_subject(serve)
+                            subject = subject.split("-")[1]
+                            first_inp = driver.find_element(By.XPATH,"//*[@id='first']")
+                            second_inp = driver.find_element(By.XPATH,"//*[@id='second']")
+                            third_inp = driver.find_element(By.XPATH,"//*[@id='third']")
+                            fourth_inp = driver.find_element(By.XPATH,"//*[@id='fourth']")
+                            first_inp.send_keys(subject[0])
+                            time.sleep(1)
+                            second_inp.send_keys(subject[1])
+                            time.sleep(1)
+                            third_inp.send_keys(subject[2])
+                            time.sleep(1)
+                            fourth_inp.send_keys(subject[3])
+                            time.sleep(1)
 
                     except:
                         error = "error in finding button"
                         x+=1
                         break
+
+                    special_index+=1
                 html_text = driver.page_source
                 soup = BeautifulSoup(html_text,"lxml")
                 products = soup.find("div",class_="q_hm1 cnhdr fxmn")
