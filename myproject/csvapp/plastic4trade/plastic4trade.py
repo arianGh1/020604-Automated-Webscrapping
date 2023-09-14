@@ -56,7 +56,7 @@ def scrape(dir_name):
     index = 0
     count = 0
     driver = webdriver.Chrome(service=service,options=options)
-    for category_url in category_urls[:1]:
+    for category_url in category_urls:
         print(f'category: {category_url.split("/")[-2]} --{count}/{len(category_urls)}',end='\r')
         driver.get(category_url)
         time.sleep(3)
