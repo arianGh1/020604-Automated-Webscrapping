@@ -51,7 +51,30 @@ MIDDLEWARE = [
 ]
 LOGIN_URL = 'user_login'
 ROOT_URLCONF = 'myproject.urls'
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    'csvapp': {
+        'handlers': ['file'],
+        'level': 'DEBUG',
+        'propagate': True,
+    },
 
+    },
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

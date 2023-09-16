@@ -30,10 +30,13 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver.chrome.service import Service
+import logging
+
+logger = logging.getLogger(__name__)
 # Setup the Gmail API
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
-def get_service(dir_name):
+def get_service():
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first time.
@@ -75,7 +78,7 @@ def scrape(dir_name):
     options = Options()
 
     options.add_argument('--user-data-dir=/Users/Administrator/AppData/Local/Google/Chrome/User Data/') 
-    options.add_argument('--profile-directory=Default')
+    options.add_argument('--profile-directory=Profile 1')
     options.add_argument("--disable-extensions")
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument("--start-maximized")
@@ -83,7 +86,7 @@ def scrape(dir_name):
     options.add_argument('disable-infobars')
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    options.add_argument("--remote-debugging-port=9222")
+    
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"
     options.add_argument(f'user-agent={user_agent}')
 
@@ -147,22 +150,18 @@ def scrape(dir_name):
             if IsDriverClose:
                 time.sleep(3)
                 driver = webdriver.Chrome(service=service,options=options )
+                IsDriverClose = False
 
             try:
                 wb_address = category + "?grid_view=1"
                 wb_address = wb_address.replace("impcat",city)
                 driver.get(wb_address)
                 
-                time.sleep(4)
+                time.sleep(2)
                 html_text = driver.page_source
                 soup = BeautifulSoup(html_text,"lxml")
                 
-                # If captcha appears
-                while "check the box below to proceed" in html_text:
-                    print("Stucked in the Captcha , please check the box to continue","r")
-                    html_text = driver.page_source
-                    soup = BeautifulSoup(html_text,"lxml")
-                    continue
+
 
                 if "No results found for" in html_text:
                     continue
@@ -171,10 +170,12 @@ def scrape(dir_name):
 
 
                 soup_old = ""
-                print(f'Category Number:{count+1}/{len(categories)}----Dict_Length:{len(all_details)}',end='\r')
+
+                logger.info(f'Category Number:{count+1}/{len(categories)}----Dict_Length:{len(all_details)}')
+               
                 special_index = 0
                 while True:
-                    if special_index ==30:
+                    if special_index >=5:
                         break
 
                     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -187,7 +188,11 @@ def scrape(dir_name):
                     try:
 
                         btn = driver.find_element(By.CLASS_NAME,"fm2")
-                        driver.execute_script("arguments[0].click();",btn)
+                        if btn:
+                            driver.execute_script("arguments[0].click();",btn)
+                        else:
+                            special_index+=1
+                            continue
                         html_text = driver.page_source
                         soup = BeautifulSoup(html_text,"lxml")
                         if "Email ID" in html_text:
@@ -200,7 +205,7 @@ def scrape(dir_name):
                             sign_in_btn = driver.find_element(By.XPATH,"//*[@id='submtbtn']")
                             sign_in_btn.click()
                             time.sleep(15)
-                            serve = get_service(dir_name)
+                            serve = get_service()
                             subject = get_latest_email_subject(serve)
                             subject = subject.split("-")[1]
                             first_inp = driver.find_element(By.XPATH,"//*[@id='first']")

@@ -27,8 +27,7 @@ def scrape(dir_name):
     service = Service(executable_path='csvapp/plastic4trade/chromedriver.exe')
     options = Options()
 
-    options.add_argument('--user-data-dir=/Users/Administrator/AppData/Local/Google/Chrome/User Data/') 
-    options.add_argument('--profile-directory=Default')
+
     options.add_argument("--disable-extensions")
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument("--start-maximized")

@@ -1,0 +1,344 @@
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:00:00.589085' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:00:00.589085', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.015) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.016) INSERT INTO "csvapp_csvhistory" ("start_date", "end_date", "generated_files", "is_running") VALUES ('2023-09-09 07:00:00.610669', '2023-09-16 07:00:00.610669', '', 1) RETURNING "csvapp_csvhistory"."id"; args=('2023-09-09 07:00:00.610669', '2023-09-16 07:00:00.610669', '', True); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.016) UPDATE "csvapp_csvhistory" SET "start_date" = '2023-09-09 07:00:00.610669', "end_date" = '2023-09-16 07:00:00.610669', "generated_files" = 'csvapp/indiamart/indiamart_1694872800\indiamart.zip', "is_running" = 0 WHERE "csvapp_csvhistory"."id" = 226; args=('2023-09-09 07:00:00.610669', '2023-09-16 07:00:00.610669', 'csvapp/indiamart/indiamart_1694872800\\indiamart.zip', False, 226); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:01:26.561426' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:01:26.561426', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT "csvapp_csvhistory"."id", "csvapp_csvhistory"."start_date", "csvapp_csvhistory"."end_date", "csvapp_csvhistory"."generated_files", "csvapp_csvhistory"."is_running" FROM "csvapp_csvhistory" ORDER BY "csvapp_csvhistory"."start_date" DESC; args=(); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:01:59.543910' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:01:59.543910', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:10:45.733274' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:10:45.733274', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:10:48.305172' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:10:48.305172', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) INSERT INTO "csvapp_csvhistory" ("start_date", "end_date", "generated_files", "is_running") VALUES ('2023-09-09 07:10:48.318014', '2023-09-16 07:10:48.318014', '', 1) RETURNING "csvapp_csvhistory"."id"; args=('2023-09-09 07:10:48.318014', '2023-09-16 07:10:48.318014', '', True); alias=default
+This is a test log message!
+Category Number:1/83----Dict_Length:0
+This is a test log message!
+Category Number:1/83----Dict_Length:0
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+This is a test log message!
+Category Number:1/83----Dict_Length:7
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+This is a test log message!
+Category Number:1/83----Dict_Length:10
+This is a test log message!
+Category Number:1/83----Dict_Length:12
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+This is a test log message!
+Category Number:2/83----Dict_Length:13
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+This is a test log message!
+Category Number:2/83----Dict_Length:13
+(0.016) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+This is a test log message!
+Category Number:2/83----Dict_Length:41
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+This is a test log message!
+Category Number:2/83----Dict_Length:69
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+This is a test log message!
+Category Number:2/83----Dict_Length:97
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.015) UPDATE "csvapp_csvhistory" SET "start_date" = '2023-09-09 07:10:48.318014', "end_date" = '2023-09-16 07:10:48.318014', "generated_files" = 'csvapp/indiamart/indiamart_1694873448\indiamart.zip', "is_running" = 0 WHERE "csvapp_csvhistory"."id" = 227; args=('2023-09-09 07:10:48.318014', '2023-09-16 07:10:48.318014', 'csvapp/indiamart/indiamart_1694873448\\indiamart.zip', False, 227); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:11:42.361489' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:11:42.361489', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT "csvapp_csvhistory"."id", "csvapp_csvhistory"."start_date", "csvapp_csvhistory"."end_date", "csvapp_csvhistory"."generated_files", "csvapp_csvhistory"."is_running" FROM "csvapp_csvhistory" ORDER BY "csvapp_csvhistory"."start_date" DESC; args=(); alias=default
+(0.015) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:12:34.097517' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:12:34.097517', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:13:36.088199' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:13:36.088199', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:13:47.412149' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:13:47.412149', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) INSERT INTO "csvapp_csvhistory" ("start_date", "end_date", "generated_files", "is_running") VALUES ('2023-09-09 07:13:47.424895', '2023-09-16 07:13:47.424895', '', 1) RETURNING "csvapp_csvhistory"."id"; args=('2023-09-09 07:13:47.424895', '2023-09-16 07:13:47.424895', '', True); alias=default
+Category Number:1/83----Dict_Length:0
+Category Number:1/83----Dict_Length:0
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:7
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:10
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:12
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:13
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:14
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:17
+Category Number:1/83----Dict_Length:19
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:47
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:48
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:62
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:69
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:74
+Category Number:1/83----Dict_Length:76
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:104
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:132
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:132
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:133
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:136
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:144
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:171
+Category Number:1/83----Dict_Length:174
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:177
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:178
+Category Number:1/83----Dict_Length:183
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:185
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:187
+Category Number:1/83----Dict_Length:192
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:194
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:203
+Category Number:1/83----Dict_Length:207
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:210
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:222
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:224
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:233
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:234
+Category Number:1/83----Dict_Length:236
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:237
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:241
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:260
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:266
+Category Number:1/83----Dict_Length:281
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:287
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:296
+Category Number:1/83----Dict_Length:301
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:304
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:305
+Category Number:1/83----Dict_Length:333
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:335
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:336
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:336
+Category Number:1/83----Dict_Length:339
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:340
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:343
+Category Number:1/83----Dict_Length:348
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:349
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:377
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:378
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:379
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:407
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:412
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:418
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:420
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:429
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:432
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:432
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:449
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:464
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:492
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:496
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:502
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:516
+Category Number:1/83----Dict_Length:523
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:533
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:534
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:535
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:539
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:546
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:554
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:555
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:583
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:594
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:606
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:616
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:621
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:623
+Category Number:1/83----Dict_Length:648
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:650
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:662
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:670
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:675
+Category Number:1/83----Dict_Length:678
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+Category Number:1/83----Dict_Length:680
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.015) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
+(0.031) UPDATE "csvapp_csvhistory" SET "start_date" = '2023-09-09 07:13:47.424895', "end_date" = '2023-09-16 07:13:47.424895', "generated_files" = '', "is_running" = 0 WHERE "csvapp_csvhistory"."id" = 228; args=('2023-09-09 07:13:47.424895', '2023-09-16 07:13:47.424895', '', False, 228); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:30:12.596907' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:30:12.596907', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT "csvapp_csvhistory"."id", "csvapp_csvhistory"."start_date", "csvapp_csvhistory"."end_date", "csvapp_csvhistory"."generated_files", "csvapp_csvhistory"."is_running" FROM "csvapp_csvhistory" ORDER BY "csvapp_csvhistory"."start_date" DESC; args=(); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-09-16 14:30:22.345977' AND "django_session"."session_key" = 'iv08eoegq64vmdabmasecqjxnrre177q') LIMIT 21; args=('2023-09-16 14:30:22.345977', 'iv08eoegq64vmdabmasecqjxnrre177q'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "csvapp_csvhistory" WHERE "csvapp_csvhistory"."is_running" LIMIT 1; args=(1,); alias=default
