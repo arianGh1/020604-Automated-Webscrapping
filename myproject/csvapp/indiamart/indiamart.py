@@ -124,20 +124,21 @@ def scrape(dir_name):
     all_details = {}
     index = 0
     error = ""
-    history = 1
     x = 0
     IsDriverClose = True
+
     for count,category in enumerate(categories):
         if IsDriverClose:
             driver = webdriver.Chrome(service=service,options=options )
             IsDriverClose = False
-
+        
+        history=1
         for city in cities:
 
-            if history%24==0 :
+            if history%65==0 :
 
                 if not IsDriverClose:
-                    driver.close()
+                    driver.quit()
                     IsDriverClose = True
                     
                 else:
@@ -172,61 +173,9 @@ def scrape(dir_name):
                 soup_old = ""
 
                 logger.info(f'Category Number:{count+1}/{len(categories)}----Dict_Length:{len(all_details)}')
-               
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 special_index = 0
-                while True:
-                    if special_index >=5:
-                        break
 
-                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                    html_text = driver.page_source
-                    soup = BeautifulSoup(html_text,"lxml")
-                    if soup == soup_old:
-                        break
-                    else:
-                        soup_old = soup
-                    try:
-
-                        btn = driver.find_element(By.CLASS_NAME,"fm2")
-                        if btn:
-                            driver.execute_script("arguments[0].click();",btn)
-                        else:
-                            special_index+=1
-                            continue
-                        html_text = driver.page_source
-                        soup = BeautifulSoup(html_text,"lxml")
-                        if "Email ID" in html_text:
-                            email_input = driver.find_element(By.XPATH,"//*[@id='email']")
-                            email_input.send_keys("waste5667@gmail.com")
-                            time.sleep(1)
-                            terms_btn = driver.find_element(By.XPATH,"//*[@id='myCheckbox']")
-                            time.sleep(1)
-                            terms_btn.click()
-                            sign_in_btn = driver.find_element(By.XPATH,"//*[@id='submtbtn']")
-                            sign_in_btn.click()
-                            time.sleep(15)
-                            serve = get_service()
-                            subject = get_latest_email_subject(serve)
-                            subject = subject.split("-")[1]
-                            first_inp = driver.find_element(By.XPATH,"//*[@id='first']")
-                            second_inp = driver.find_element(By.XPATH,"//*[@id='second']")
-                            third_inp = driver.find_element(By.XPATH,"//*[@id='third']")
-                            fourth_inp = driver.find_element(By.XPATH,"//*[@id='fourth']")
-                            first_inp.send_keys(subject[0])
-                            time.sleep(1)
-                            second_inp.send_keys(subject[1])
-                            time.sleep(1)
-                            third_inp.send_keys(subject[2])
-                            time.sleep(1)
-                            fourth_inp.send_keys(subject[3])
-                            time.sleep(1)
-
-                    except:
-                        error = "error in finding button"
-                        x+=1
-                        break
-
-                    special_index+=1
                 html_text = driver.page_source
                 soup = BeautifulSoup(html_text,"lxml")
                 products = soup.find("div",class_="q_hm1 cnhdr fxmn")
@@ -238,7 +187,8 @@ def scrape(dir_name):
                 for section in sections:
                     if section.has_attr('id'):
                         filtered_sections.append(section)
-
+                if len(filtered_sections) <= 1:
+                    continue
                 for section in filtered_sections:
                     details={}
                     try:
@@ -265,11 +215,14 @@ def scrape(dir_name):
                     all_details[index] = details
                     index+=1
             except:
-                error = "error in big try"
-                x+=1
+                logger.info('error in big try')
+                
+                driver.quit()
+                IsDriverClose = True
                 continue
+
         if not IsDriverClose:
-            driver.close()
+            driver.quit()
             IsDriverClose = True
         else:
             x+=1

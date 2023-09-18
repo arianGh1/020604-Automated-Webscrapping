@@ -56,7 +56,7 @@ def download_csv(request, filename):
             response['Content-Disposition'] = f'attachment; filename="{file_path.split("/")[-1]}"'
             return response
     return HttpResponse("File not found.", status=404)
-@login_required
+
 @login_required
 def generate_csvs(request):
 
