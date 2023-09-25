@@ -22,7 +22,8 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.by import By
@@ -31,7 +32,7 @@ from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver.chrome.service import Service
 import logging
-
+from random import randrange
 logger = logging.getLogger(__name__)
 # Setup the Gmail API
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
@@ -40,8 +41,8 @@ def get_service():
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first time.
-    if os.path.exists('token.json'):
-        with open('token.json', 'r') as token:
+    if os.path.exists('csvapp/indiamart/'+'token.json'):
+        with open('csvapp/indiamart/'+'token.json', 'r') as token:
             creds = Credentials.from_authorized_user_file('token.json')
 
     # If there are no (valid) credentials available, prompt the user to log in.
@@ -52,7 +53,7 @@ def get_service():
             flow = InstalledAppFlow.from_client_secrets_file('csvapp/indiamart/'+'client_secret_355172851814-r55p4liplb4l4s309frpd97puut1eg4t.apps.googleusercontent.com.json', SCOPES)
             creds = flow.run_local_server(port=0)
             # Save the credentials for the next run
-            with open('token.json', 'w') as token:
+            with open('csvapp/indiamart/'+'token.json', 'w') as token:
                 token.write(creds.to_json())
 
     service = build('gmail', 'v1', credentials=creds)
@@ -72,14 +73,31 @@ def get_latest_email_subject(service):
             return header['value']
 
     return None
+def wait_for_element(driver, by_type, identifier, timeout=10):
+    return WebDriverWait(driver, timeout).until(EC.presence_of_element_located((by_type, identifier)))
+
+def process_price(x):
+    try:
+        # Extract the price value, remove the "₹" symbol and commas, and take the first part before any space
+        price_value = float(x.split("/")[0].replace("₹", "").replace(",", "").split(" ")[0])
+
+        # Check if the denominator is " tonne" and adjust the price value if needed
+        if x.split("/")[1].strip() == "tonne":
+            price_value = price_value / 1000
+
+        return price_value
+
+    except:
+        # Return None if there's any error
+        return None
 
 def scrape(dir_name):
     service = Service(executable_path='csvapp/indiamart/chromedriver.exe')
     options = Options()
 
     options.add_argument('--user-data-dir=/Users/Administrator/AppData/Local/Google/Chrome/User Data/') 
-    options.add_argument('--profile-directory=Profile 1')
-    options.add_argument("--disable-extensions")
+    options.add_argument('--profile-directory=Profile 2')
+    
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument("--start-maximized")
 
@@ -126,103 +144,197 @@ def scrape(dir_name):
     error = ""
     x = 0
     IsDriverClose = True
-
+    history=1
     for count,category in enumerate(categories):
         if IsDriverClose:
             driver = webdriver.Chrome(service=service,options=options )
             IsDriverClose = False
         
-        history=1
-        for city in cities:
-
-            if history%65==0 :
-
-                if not IsDriverClose:
-                    driver.quit()
-                    IsDriverClose = True
-                    
-                else:
-                    x+=1
-                history+=1
-
-            else:
-                history += 1
-
-            if IsDriverClose:
+       
+        
+        
+        if history%35==0 :
+            
+            history = 1
+            
+            if not IsDriverClose:
                 time.sleep(3)
-                driver = webdriver.Chrome(service=service,options=options )
-                IsDriverClose = False
-
-            try:
-                wb_address = category + "?grid_view=1"
-                wb_address = wb_address.replace("impcat",city)
-                driver.get(wb_address)
-                
-                time.sleep(2)
-                html_text = driver.page_source
-                soup = BeautifulSoup(html_text,"lxml")
-                
-
-
-                if "No results found for" in html_text:
-                    continue
-                if "Oh no" in html_text:
-                    continue
-
-
-                soup_old = ""
-
-                logger.info(f'Category Number:{count+1}/{len(categories)}----Dict_Length:{len(all_details)}')
-                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                special_index = 0
-
-                html_text = driver.page_source
-                soup = BeautifulSoup(html_text,"lxml")
-                products = soup.find("div",class_="q_hm1 cnhdr fxmn")
-                products = products.find("div",class_='lay-left')
-                products = products.find("ul",class_="mListGrp w100 sid_df fww wlm mFrgn")
-                sections = products.find_all("li")
-                filtered_sections = []
-
-                for section in sections:
-                    if section.has_attr('id'):
-                        filtered_sections.append(section)
-                if len(filtered_sections) <= 1:
-                    continue
-                for section in filtered_sections:
-                    details={}
-                    try:
-                        name = section.find("h3").text
-                        price = section.find("p").text
-                        try:
-                            url = section.find('li',class_="mListPrc").find("a")["href"]
-                        except:
-                            try:
-                                url = section.find("a")["href"]
-                            except:
-                                url = None
-                            
-                    except:
-                        
-                        continue
-
-                    details["name"]= name
-                    details["price"] = price
-                    details["url"] = url
-                    details["category"] = category.split("/")[-1].split(".html")[0]
-                    details["city"] = city
-
-                    all_details[index] = details
-                    index+=1
-            except:
-                logger.info('error in big try')
-                
-                driver.quit()
+                driver.close()
+                time.sleep(3)
                 IsDriverClose = True
-                continue
+              
 
+            
+            x+=1
+           
+            history+=1
+            
+        else:
+            history += 1
+        
+        if IsDriverClose:
+            time.sleep(3)
+            driver = webdriver.Chrome(service=service,options=options )
+            IsDriverClose = False
+        else:
+            x+=1
+        
+        try:
+
+            wb_address = category + "?grid_view=1"
+           
+            driver.get(wb_address)
+            if history==1:
+                time.sleep(15)
+            else:
+                time.sleep(randrange(6,9))
+            html_text = driver.page_source
+            if "Login to connect with" in html_text:
+                skip_btn = driver.find_element(By.XPATH,"//*[@id='idfpclose']")
+                driver.execute_script("arguments[0].click();",skip_btn)
+                html_text = driver.page_source
+            
+            soup = BeautifulSoup(html_text,"lxml")
+            
+
+
+            if "No results found for" in html_text:
+                continue
+            if "Oh no" in html_text:
+                continue
+            
+
+            soup_old = ""
+            load_clicks = 0
+            try_again = 0
+            while True:
+                load_clicks += 1
+                logger.info(f'Category Number:{count+1}/{len(categories)}----Data Scraped:{len(all_details)}----Load Clicks:{load_clicks}')
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                time.sleep(4)
+                html_text = driver.page_source
+                soup = BeautifulSoup(html_text,"lxml")
+                if "Get free quotes from" in html_text:
+                    close_btn = driver.find_element(By.CLASS_NAME,"be-cls")
+                    if close_btn:
+                        driver.execute_script("arguments[0].click();",close_btn)
+                    
+                if soup == soup_old:
+                    break
+                else:
+                    soup_old = soup
+                try:
+
+                    btn = driver.find_element(By.CLASS_NAME,"fm2")
+                    driver.execute_script("arguments[0].click();",btn)
+
+                    if "Email ID" in html_text:
+                        email_input = driver.find_element(By.XPATH,"//*[@id='email']")
+                        email_input.send_keys("scrapewaste85@gmail.com")
+                        time.sleep(1)
+                        terms_btn = driver.find_element(By.XPATH,"//*[@id='myCheckbox']")
+                        time.sleep(2)
+                        terms_btn.click()
+                        time.sleep(2)
+                        sign_in_btn = driver.find_element(By.XPATH,"//*[@id='submtbtn']")
+                        sign_in_btn.click()
+                        time.sleep(5)
+                        
+                        password_btn = driver.find_element(By.XPATH,"//*[@id='passwordbtn1']")
+                        driver.execute_script("arguments[0].click();",password_btn)
+                        time.sleep(5)
+                        driver.find_element(By.XPATH,"//*[@id='usr_pass']").send_keys("Waste0000#")
+                        time.sleep(2)
+
+
+                        agree = driver.find_element(By.XPATH,"//*[@id='myCheckbox']")
+                        agree.click()
+                        time.sleep(2)
+                        login_btn = driver.find_element(By.XPATH,"//*[@id='submtbtn']")
+                        driver.execute_script("arguments[0].click();",login_btn)
+                    elif "Login with One Time Password" in html_text:
+                        password_btn = driver.find_element(By.XPATH,"//*[@id='passwordbtn1']")
+                        driver.execute_script("arguments[0].click();",password_btn)
+                        time.sleep(5)
+                        driver.find_element(By.XPATH,"//*[@id='usr_pass']").send_keys("Waste0000#")
+                        time.sleep(2)
+
+
+                        agree = driver.find_element(By.XPATH,"//*[@id='myCheckbox']")
+                        agree.click()
+                        time.sleep(2)
+                        login_btn = driver.find_element(By.XPATH,"//*[@id='submtbtn']")
+                        driver.execute_script("arguments[0].click();",login_btn)
+                    else:
+                        print("yes")
+                except:
+                    error = "error in finding button"
+                    if try_again>=8:
+                        try_again = 0
+                        break
+                    else:
+                        try_again+=1
+            time.sleep(5)
+            html_text = driver.page_source        
+            soup = BeautifulSoup(html_text,"lxml")
+            
+            products = soup.find("div",class_="q_hm1 cnhdr fxmn")
+            
+            products = products.find("div",class_='lay-left')
+            
+            products = products.find("ul",class_="mListGrp w100 sid_df fww wlm mFrgn")
+            
+            sections = products.find_all("li")
+            
+            filtered_sections = []
+            
+            for section in sections:
+                
+                if section.has_attr('id'):
+                    
+                    filtered_sections.append(section)
+            
+            if len(filtered_sections) <= 1:
+                continue
+            
+            for section in filtered_sections:
+                
+                details={}
+                try:
+                    
+                    name = section.find("h3").text
+                    
+                    price = section.find("p").text
+                    
+                    try:
+                        url = section.find('li',class_="mListPrc").find("a")["href"]
+                    except:
+                        url = None
+                    try:
+                        city = section.find("div",class_="to-txt-pos to-txt-ex-div").find("span",class_="elps").text
+                    except:
+                        city = "Unknown"
+                    
+                except:
+                    
+                    continue
+                
+                details["name"]= name
+                details["price"] = price
+                details["url"] = url
+                details["category"] = category.split("/")[-1].split(".html")[0]
+                details["city"] = city
+
+                all_details[index] = details
+                index+=1
+        except:
+            
+            
+            continue
+        
         if not IsDriverClose:
-            driver.quit()
+            time.sleep(5)
+            driver.close()
             IsDriverClose = True
         else:
             x+=1
@@ -269,24 +381,31 @@ def scrape(dir_name):
     filtered_df = filtered_df.reset_index(drop=True)
     filtered_df.to_csv(dir_name+"/filtered_indiamart.csv",index=False)
 
-    filtered_df["price"] = filtered_df["price"].apply(lambda x: float(x.split("/")[0].replace("₹","").replace(",","").split(" ")[0])/1000 if x.split("/")[1]==" tonne" else float(x.split("/")[0].replace("₹","").replace(",","").split(" ")[0]))
-    del filtered_df["metric"]
-    filtered_df['z_score'] = stats.zscore(filtered_df['price'])
+    try:
+        filtered_df["price"] = filtered_df["price"].apply(process_price)
+        filtered_df = filtered_df.dropna(subset=["price"])
+        del filtered_df["metric"]
+        filtered_df['z_score'] = stats.zscore(filtered_df['price'])
 
-    # Remove outliers: keep only the ones that are within +3 to -3 standard deviations in the column 'price'
-    filtered_df = filtered_df[filtered_df['z_score'].abs() <= 3]
+        # Remove outliers: keep only the ones that are within +3 to -3 standard deviations in the column 'price'
+        filtered_df = filtered_df[filtered_df['z_score'].abs() <= 3]
 
-    # Drop the Z-score column as we no longer need it
-    filtered_df.drop(columns=['z_score'], inplace=True)
+        # Drop the Z-score column as we no longer need it
+        filtered_df.drop(columns=['z_score'], inplace=True)
 
-    q_low = filtered_df["price"].quantile(0.10)
-    q_hi  = filtered_df["price"].quantile(0.90)
+        q_low = filtered_df["price"].quantile(0.10)
+        q_hi  = filtered_df["price"].quantile(0.90)
 
-    df_filtered = filtered_df[(filtered_df["price"] < q_hi) & (filtered_df["price"] > q_low)]
-    
-    # Calculate the average price per category
-    summary_stats = df_filtered.groupby(["category","city"])['price'].agg(['mean', 'min', 'max', 'median'])
-    summary_stats.to_csv(dir_name+"/summary.csv")
+        df_filtered = filtered_df[(filtered_df["price"] < q_hi) & (filtered_df["price"] > q_low)]
+        
+        # Calculate the average price per category
+        city_summary_stats = df_filtered.groupby(["category","city"])['price'].agg(['mean', 'min', 'max', 'median'])
+        category_summary_stats = df_filtered.groupby(["category"])['price'].agg(['mean', 'min', 'max', 'median'])
+
+        city_summary_stats.to_csv(dir_name+"/city_summary.csv")
+        category_summary_stats.to_csv(dir_name+"/category_summary.csv")
+    except Exception as e:
+        logger.error(e)
 
 def generate():
     current_time = int(time.time())

@@ -1,0 +1,10 @@
+first run this on myproject directory:
+python manage.py shell
+
+then paste this:
+from csvapp.models import CSVHistory
+
+running_histories = CSVHistory.objects.filter(is_running=True)
+for history in running_histories:
+    history.is_running = False
+    history.save()

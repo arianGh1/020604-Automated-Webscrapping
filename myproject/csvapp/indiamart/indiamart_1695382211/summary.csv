@@ -1,0 +1,237 @@
+category,city,mean,min,max,median
+ferrous-metal-scrap,Bengaluru ,60.0,60.0,60.0,60.0
+ferrous-metal-scrap,"Bhangar Mohalla, New Delhi ",38.0,38.0,38.0,38.0
+ferrous-metal-scrap,Coimbatore ,45.0,45.0,45.0,45.0
+ferrous-metal-scrap,"FAZALGANJ, Kanpur, Dist. Kanpur Nagar ",35.0,35.0,35.0,35.0
+ferrous-metal-scrap,"Jaygaon, Dist. Alipurduar ",40.0,40.0,40.0,40.0
+ferrous-metal-scrap,"Kumbharwada, Bhavnagar ",42.0,42.0,42.0,42.0
+ferrous-metal-scrap,Lakhisarai ,40.0,40.0,40.0,40.0
+ferrous-metal-scrap,"Mumbai Suburban, Mumbai ",45.0,45.0,45.0,45.0
+ferrous-metal-scrap,"Neyveli, Dist. Cuddalore ",40.0,40.0,40.0,40.0
+ferrous-metal-scrap,Pune ,40.0,40.0,40.0,40.0
+ferrous-metal-scrap,"Rajaji Nagar, Bengaluru ",35.0,35.0,35.0,35.0
+ferrous-metal-scrap,Saiha ,35.0,35.0,35.0,35.0
+ferrous-metal-scrap,"Sihor, Dist. Bhavnagar ",38.0,38.0,38.0,38.0
+ferrous-metal-scrap,Thane ,37.0,37.0,37.0,37.0
+ferrous-metal-scrap,"Vijayanagar, Bengaluru ",36.0,36.0,36.0,36.0
+ferrous-metal-scrap,"kesharbagh, Lucknow ",35.0,35.0,35.0,35.0
+pet-bottle-flake,"21/5, Ulundurpet, Dist. Villupuram ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"321023, Kaman, Dist. Bharatpur ",52.0,52.0,52.0,52.0
+pet-bottle-flake,"66/67, Dhiraj Industrial, Surat ",35.0,35.0,35.0,35.0
+pet-bottle-flake,"Agripada, Mumbai ",56.0,56.0,56.0,56.0
+pet-bottle-flake,Ahmedabad ,53.6,38.0,65.0,54.0
+pet-bottle-flake,Ajmer ,53.0,53.0,53.0,53.0
+pet-bottle-flake,"Alangudi, Dist. Pudukkottai ",61.0,57.0,65.0,61.0
+pet-bottle-flake,Aligarh ,55.0,55.0,55.0,55.0
+pet-bottle-flake,"Alok Park, Ghaziabad ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Ambur, Tamil Madu, Chennai ",50.0,50.0,50.0,50.0
+pet-bottle-flake,Amreli ,58.0,58.0,58.0,58.0
+pet-bottle-flake,"Andheri East, Mumbai ",43.0,43.0,43.0,43.0
+pet-bottle-flake,"Andheri weat, Mumbai ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Annavasal, Dist. Pudukkottai ",41.0,41.0,41.0,41.0
+pet-bottle-flake,"At-Trajpar, Morbi ",44.0,44.0,44.0,44.0
+pet-bottle-flake,Aurangabad ,56.0,56.0,56.0,56.0
+pet-bottle-flake,"Autonagar, Guntur ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Bahadurgarh, Dist. Jhajjar ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Baikampady Industrial Area, Mangalore, Dist. Dakshina Kannada ",48.0,48.0,48.0,48.0
+pet-bottle-flake,"Balaykheda, Indore ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Bardhaman, Dist. Purba Bardhaman ",38.0,38.0,38.0,38.0
+pet-bottle-flake,Bareilly ,60.0,60.0,60.0,60.0
+pet-bottle-flake,"Bawal, Dist. Rewari ",42.0,42.0,42.0,42.0
+pet-bottle-flake,Belgaum ,47.5,45.0,50.0,47.5
+pet-bottle-flake,Bengaluru ,51.333333333333336,39.0,65.0,50.0
+pet-bottle-flake,"Bhadwasiya, Jodhpur ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"Bhandup West, Mumbai ",52.0,52.0,52.0,52.0
+pet-bottle-flake,Bharuch ,45.0,45.0,45.0,45.0
+pet-bottle-flake,"Bhatar, Surat ",56.0,56.0,56.0,56.0
+pet-bottle-flake,"Bhathena, Surat ",52.0,52.0,52.0,52.0
+pet-bottle-flake,Bhavnagar ,45.0,45.0,45.0,45.0
+pet-bottle-flake,Bhopal ,53.5,52.0,55.0,53.5
+pet-bottle-flake,"Bhuj, Dist. Kachchh ",54.0,54.0,54.0,54.0
+pet-bottle-flake,"Bhusawal MIDC, Jalgaon, Bhusawal, Dist. Jalgaon ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Bijapur, Dist. Vijayapura ",46.0,46.0,46.0,46.0
+pet-bottle-flake,"Bijapur, Vijayapura ",44.0,44.0,44.0,44.0
+pet-bottle-flake,"Bill Village, Vadodara ",37.0,37.0,37.0,37.0
+pet-bottle-flake,"Binali Apartments, Bhilad, Dist. Valsad ",52.0,52.0,52.0,52.0
+pet-bottle-flake,Bishnupur Birbhum District ,43.0,43.0,43.0,43.0
+pet-bottle-flake,"Bopal, Ahmedabad ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"CHAMUNDA VIHAR, Kashipur, Dist. Udham Singh Nagar ",55.0,55.0,55.0,55.0
+pet-bottle-flake,Chandigarh ,60.0,60.0,60.0,60.0
+pet-bottle-flake,Chennai ,49.0,47.0,51.0,49.0
+pet-bottle-flake,"Cheranmahadevi Taluk, Tirunelveli Dt, Cheranmadevi, Dist. Tirunelveli ",62.0,62.0,62.0,62.0
+pet-bottle-flake,Chhatarpur ,61.0,61.0,61.0,61.0
+pet-bottle-flake,"Chhatarpur, New Delhi ",58.0,58.0,58.0,58.0
+pet-bottle-flake,"City, Kanpur, Dist. Kanpur Nagar ",60.0,60.0,60.0,60.0
+pet-bottle-flake,Coimbatore ,45.0,45.0,45.0,45.0
+pet-bottle-flake,"Corbett, Dist. Nainital ",56.0,56.0,56.0,56.0
+pet-bottle-flake,Cuttack ,65.0,65.0,65.0,65.0
+pet-bottle-flake,"Dallirajhara, Dist. Durg ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Daultabad, Gurgaon, Dist. Gurugram ",55.0,55.0,55.0,55.0
+pet-bottle-flake,Dehradun ,43.0,43.0,43.0,43.0
+pet-bottle-flake,Delhi ,50.0,50.0,50.0,50.0
+pet-bottle-flake,Dewas ,40.0,40.0,40.0,40.0
+pet-bottle-flake,"District Thane, Mumbai ",49.5,49.5,49.5,49.5
+pet-bottle-flake,"Elumathur, Erode ",49.0,49.0,49.0,49.0
+pet-bottle-flake,Etah ,50.0,50.0,50.0,50.0
+pet-bottle-flake,"Evurivaripalem, Chilakalurupet, Dist. Guntur ",48.0,48.0,48.0,48.0
+pet-bottle-flake,"GANESHNAGAR, Ahmedabad ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Gandhi Chowk, Bilaspur ",56.0,56.0,56.0,56.0
+pet-bottle-flake,"Gandhinagar, Dist. Gandhi Nagar ",60.0,60.0,60.0,60.0
+pet-bottle-flake,"Gangondana Halli, Bengaluru ",60.0,60.0,60.0,60.0
+pet-bottle-flake,"Gautam Budh Nagar, Dist. Gautam Buddha Nagar ",64.0,64.0,64.0,64.0
+pet-bottle-flake,"Ghatkopar West, Mumbai ",64.0,64.0,64.0,64.0
+pet-bottle-flake,Ghaziabad ,37.0,37.0,37.0,37.0
+pet-bottle-flake,"Gill Nagar, Bathinda ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Gondal, Dist. Rajkot ",60.5,57.0,64.0,60.5
+pet-bottle-flake,"Gunjalwadi, Sangamner, Dist. Ahmed Nagar ",45.0,45.0,45.0,45.0
+pet-bottle-flake,Gurdaspur ,50.0,50.0,50.0,50.0
+pet-bottle-flake,"Guru Teg Bahadur Market, Sirsa ",45.0,45.0,45.0,45.0
+pet-bottle-flake,Gurugram ,65.0,65.0,65.0,65.0
+pet-bottle-flake,"Guwahati, Dist. Kamrup ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"Hariyawala, Kashipur, Dist. Udham Singh Nagar ",65.0,65.0,65.0,65.0
+pet-bottle-flake,"Hathua, Dist. Gopalganj ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Hingna Road, Wanadongri RIDC, Nagpur ",60.0,60.0,60.0,60.0
+pet-bottle-flake,"INDUSTRIAL AREA, Jamnagar ",60.0,60.0,60.0,60.0
+pet-bottle-flake,Indore ,52.25,50.0,55.0,52.0
+pet-bottle-flake,"Industrial Area, Delhi ",45.0,45.0,45.0,45.0
+pet-bottle-flake,Jaipur ,52.5,45.0,60.0,52.5
+pet-bottle-flake,Jaunpur ,42.0,42.0,42.0,42.0
+pet-bottle-flake,"Jayapuram, Tindivanam, Dist. Villupuram ",64.0,64.0,64.0,64.0
+pet-bottle-flake,Jorhat ,45.0,45.0,45.0,45.0
+pet-bottle-flake,"Kalbadevi, Mumbai ",53.0,53.0,53.0,53.0
+pet-bottle-flake,"Kalol, Dist. Gandhi Nagar ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Kanakapura, Dist. Ramanagar ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Kandivali West, Mumbai ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Kanhangad, Dist. Kasargod ",48.0,48.0,48.0,48.0
+pet-bottle-flake,"Kannada, Karkal, Dist. Udupi ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Kanyapur, Asansol, Dist. Paschim Bardhaman ",68.0,68.0,68.0,68.0
+pet-bottle-flake,"Karur, Dist. Tiruchirappalli ",53.0,53.0,53.0,53.0
+pet-bottle-flake,"Kasaragod, Dist. Kasargod ",48.0,48.0,48.0,48.0
+pet-bottle-flake,"Katraj, Pune ",35.0,35.0,35.0,35.0
+pet-bottle-flake,"Kelva East, Palghar, Dist. Thane ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Kharghar, Navi Mumbai, Dist. Thane ",42.0,42.0,42.0,42.0
+pet-bottle-flake,"Kolappakkam, Porur, Chennai ",55.44,55.44,55.44,55.44
+pet-bottle-flake,Kolhapur ,35.0,35.0,35.0,35.0
+pet-bottle-flake,Kolkata ,57.5,55.0,60.0,57.5
+pet-bottle-flake,"Koramangala, Bengaluru ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Kumaraswamy Layout, Bengaluru ",58.0,58.0,58.0,58.0
+pet-bottle-flake,"Lalbagh, Murshidabad ",55.0,55.0,55.0,55.0
+pet-bottle-flake,Ludhiana ,35.0,35.0,35.0,35.0
+pet-bottle-flake,Madurai ,41.0,41.0,41.0,41.0
+pet-bottle-flake,"Mahim, Mumbai ",62.0,62.0,62.0,62.0
+pet-bottle-flake,"Makarba, Ahmedabad ",39.0,39.0,39.0,39.0
+pet-bottle-flake,"Mangalore, Dist. Dakshina Kannada ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Meenakshi Amman Nagar, Madurai ",37.0,37.0,37.0,37.0
+pet-bottle-flake,"Mehdipatnam, Hyderabad ",45.0,45.0,45.0,45.0
+pet-bottle-flake,Mehsana ,60.0,60.0,60.0,60.0
+pet-bottle-flake,"Moongilthuraipattu, Tiruvannamalai ",49.0,49.0,49.0,49.0
+pet-bottle-flake,Moradabad ,50.0,50.0,50.0,50.0
+pet-bottle-flake,"Moraiya Village, Wadhwan, Dist. Surendra Nagar ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Morar Near Slp College, Gwalior ",43.0,43.0,43.0,43.0
+pet-bottle-flake,Morbi ,53.0,50.0,56.0,53.0
+pet-bottle-flake,"Mubarakpur, Delhi ",55.0,45.0,65.0,55.0
+pet-bottle-flake,"Mulund, Mumbai ",55.0,55.0,55.0,55.0
+pet-bottle-flake,Mumbai ,47.0,35.0,62.0,45.5
+pet-bottle-flake,"Mundur, Thrissur ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Mungra Badshapur, Prayagraj ",46.0,46.0,46.0,46.0
+pet-bottle-flake,Nalgonda ,65.0,65.0,65.0,65.0
+pet-bottle-flake,"Nangloi, New Delhi ",56.0,55.0,57.0,56.0
+pet-bottle-flake,"Narendrapur, South 24 Parganas ",66.0,66.0,66.0,66.0
+pet-bottle-flake,Nashik ,43.0,43.0,43.0,43.0
+pet-bottle-flake,"Nattarkulam, Tirunelveli ",49.0,49.0,49.0,49.0
+pet-bottle-flake,"Naubasta, Kanpur, Dist. Kanpur Nagar ",40.0,40.0,40.0,40.0
+pet-bottle-flake,Navsari ,55.0,55.0,55.0,55.0
+pet-bottle-flake,"Near Kohinoor Cinema, Jaipur ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Near Narayana, E-techno School, Yelahanka Newtown, Bengaluru ",35.0,35.0,35.0,35.0
+pet-bottle-flake,"Near Paras Bhatta, Etawah ",54.0,54.0,54.0,54.0
+pet-bottle-flake,New Delhi ,51.75,40.0,62.0,52.5
+pet-bottle-flake,"New Jagrati Nagar, Gwalior ",53.0,53.0,53.0,53.0
+pet-bottle-flake,"New Raipur, Dist. Raipur ",48.0,48.0,48.0,48.0
+pet-bottle-flake,Nizamabad ,45.0,45.0,45.0,45.0
+pet-bottle-flake,North 24 Parganas ,47.0,47.0,47.0,47.0
+pet-bottle-flake,"Nuh, Dist. Gurugram ",60.0,60.0,60.0,60.0
+pet-bottle-flake,"Odhav Ring Road, Ahmedabad ",67.0,67.0,67.0,67.0
+pet-bottle-flake,"Odhav, Ahmedabad ",60.0,60.0,60.0,60.0
+pet-bottle-flake,"Old Malakpet, Hyderabad ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Old RTO, Morbi ",59.0,59.0,59.0,59.0
+pet-bottle-flake,"POONAMALAE, Kilpennathur, Dist. Tiruvannamalai ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Paddhari, Rajkot ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Palayapatti, Thanjavur ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Palghar, Dist. Thane ",55.0,55.0,55.0,55.0
+pet-bottle-flake,"Panvel, Raigad ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"Park Street Area, Kolkata ",38.0,38.0,38.0,38.0
+pet-bottle-flake,"Parli, Dist. Beed ",38.0,38.0,38.0,38.0
+pet-bottle-flake,"Pataudi Road, Rewari ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Pawar Section, Badlapur, Dist. Thane ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Poonamallee, Chennai ",53.0,53.0,53.0,53.0
+pet-bottle-flake,Pune ,45.0,45.0,45.0,45.0
+pet-bottle-flake,"Qutubllapur, Rangareddy ",42.0,42.0,42.0,42.0
+pet-bottle-flake,"R. S. Plaza Beta, Delhi ",51.0,51.0,51.0,51.0
+pet-bottle-flake,"RIICO Industrial Area, Sriganganagar, Dist. Ganganagar ",39.0,39.0,39.0,39.0
+pet-bottle-flake,"Raigad, Panvel, Raigad ",42.0,42.0,42.0,42.0
+pet-bottle-flake,Rajkot ,55.4,48.0,60.0,57.0
+pet-bottle-flake,"Ram Dham Deval Reni Gate, Merta City, Dist. Nagaur ",47.0,47.0,47.0,47.0
+pet-bottle-flake,Ranchi ,40.0,40.0,40.0,40.0
+pet-bottle-flake,Rangareddy ,65.0,65.0,65.0,65.0
+pet-bottle-flake,"Ranjeet Nagar, Bharatpur ",62.0,62.0,62.0,62.0
+pet-bottle-flake,"Rasipuram, Koonavelampatti, Dist. Namakkal ",42.0,42.0,42.0,42.0
+pet-bottle-flake,"S. P. Ring Road, Vadodara ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"SIDCO, Cuddalore ",55.0,55.0,55.0,55.0
+pet-bottle-flake,Sagar ,45.0,45.0,45.0,45.0
+pet-bottle-flake,"Saily, Silvassa, Dist. Dadra and Nagar Haveli and Daman and Diu ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Salasar Road, Sikar ",58.0,58.0,58.0,58.0
+pet-bottle-flake,"Sangmeshwar, Ratnagiri ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Santosh Nagar Colony, Kurnool ",60.0,60.0,60.0,60.0
+pet-bottle-flake,"Sanwer Road Industrial Area, Indore ",57.0,57.0,57.0,57.0
+pet-bottle-flake,"Sanwer Road, Indore ",52.0,52.0,52.0,52.0
+pet-bottle-flake,"Sarai Tarin, Sambhal, Dist. Moradabad ",60.0,60.0,60.0,60.0
+pet-bottle-flake,"Sarita Vihar, Delhi ",51.0,51.0,51.0,51.0
+pet-bottle-flake,"Saroli, Surat ",52.0,52.0,52.0,52.0
+pet-bottle-flake,"School Lane, Panipat ",65.0,65.0,65.0,65.0
+pet-bottle-flake,"Sector 128, Noida, Dist. Gautam Buddha Nagar ",52.0,52.0,52.0,52.0
+pet-bottle-flake,"Shahapur, Asangaon, Dist. Thane ",40.0,40.0,40.0,40.0
+pet-bottle-flake,Shahjahanpur ,57.0,57.0,57.0,57.0
+pet-bottle-flake,"Sherpur, Ludhiana ",56.0,56.0,56.0,56.0
+pet-bottle-flake,"Shiv Panchayat Nagar, Yerkheda, Dist. Nagpur ",48.0,48.0,48.0,48.0
+pet-bottle-flake,"Siliguri, Dist. Darjeeling ",50.5,46.0,55.0,50.5
+pet-bottle-flake,"Silvassa, Dist. Dadra and Nagar Haveli and Daman and Diu ",65.0,65.0,65.0,65.0
+pet-bottle-flake,"Sonapur, Mumbai ",65.0,65.0,65.0,65.0
+pet-bottle-flake,"Songadh, Dist. Tapi ",57.0,57.0,57.0,57.0
+pet-bottle-flake,Sonipat ,64.0,64.0,64.0,64.0
+pet-bottle-flake,"Sri Ramachandra Mahal, Chennai ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Subhash Nagar, Sagar ",52.0,52.0,52.0,52.0
+pet-bottle-flake,"Suntikoppa, Coorg, Dist. Kodagu ",53.0,53.0,53.0,53.0
+pet-bottle-flake,Surat ,47.333333333333336,45.0,52.0,45.0
+pet-bottle-flake,"Surendranagar, Dist. Surendra Nagar ",63.0,63.0,63.0,63.0
+pet-bottle-flake,"Taltala, Kolkata ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Tardeo, Mumbai ",45.0,45.0,45.0,45.0
+pet-bottle-flake,Thane ,55.0,45.0,65.0,55.0
+pet-bottle-flake,"Thevaram, Dist. Theni ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"Thummapala, Visakhapatnam, Anakapalli, Dist. Visakhapatnam ",35.0,35.0,35.0,35.0
+pet-bottle-flake,"Tijara, Dist. Alwar ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Timbdi, Morbi ",51.0,51.0,51.0,51.0
+pet-bottle-flake,Tinsukia ,55.0,55.0,55.0,55.0
+pet-bottle-flake,"Ulhasnagar, Dist. Thane ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"Uttam Sugar Mills, Bijnor ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"VPO Sohati, Sonipat ",48.0,48.0,48.0,48.0
+pet-bottle-flake,Vadodara ,42.0,42.0,42.0,42.0
+pet-bottle-flake,"Vapi, Dist. Valsad ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Vasai East, Mumbai ",65.0,65.0,65.0,65.0
+pet-bottle-flake,"Vasai Pata, Mumbai ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Vasai Virar, Dist. Thane ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"Vasant Vihar, Karnal ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"Veerappampalayam, Erode ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"Vijay Nagar, Alwar ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"Village Karanj, Surat ",52.0,52.0,52.0,52.0
+pet-bottle-flake,Virudhunagar ,54.0,54.0,54.0,54.0
+pet-bottle-flake,"Vishwas Nagar, Delhi ",56.0,56.0,56.0,56.0
+pet-bottle-flake,"Waluj MIDC, Gangapur, Dist. Aurangabad ",52.0,52.0,52.0,52.0
+pet-bottle-flake,"chilakaluripet, Guntur ",35.0,35.0,35.0,35.0
+pet-bottle-flake,"gohalpur, Jabalpur ",65.0,65.0,65.0,65.0
+pet-bottle-flake,"india, Vasco Da Gama, Dist. South Goa ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"near hunman Mandir, New Delhi ",45.0,45.0,45.0,45.0
+pet-bottle-flake,"opp, Adarsh Silver estate, Ahmedabad ",54.0,54.0,54.0,54.0
+pet-bottle-flake,"parvathipuram, Cuddalore ",50.0,50.0,50.0,50.0
+pet-bottle-flake,"puliyara road, Kovilpatti, Dist. Tuticorin ",65.0,65.0,65.0,65.0
+pet-bottle-flake,"vijaynagar, Bengaluru ",40.0,40.0,40.0,40.0
+pet-bottle-flake,"vishwas nagar, Ujjain ",48.0,48.0,48.0,48.0

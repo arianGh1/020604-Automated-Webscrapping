@@ -62,11 +62,6 @@ LOGGING = {
         },
     },
     'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
     'csvapp': {
         'handlers': ['file'],
         'level': 'DEBUG',
